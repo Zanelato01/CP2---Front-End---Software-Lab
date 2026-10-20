@@ -1,0 +1,139 @@
+/* ===== PSEUDO-CLASSES ===== */
+
+/* :hover - links do menu */
+.menu a:hover {
+  background-color: #c9a45c;
+  color: #3b0f1a;
+}
+
+/* :focus - campos do formulário */
+.formulario input:focus,
+.formulario textarea:focus {
+  outline: none;
+  border-color: #c9a45c;
+  box-shadow: 0 0 8px rgba(201, 164, 92, 0.8);
+}
+
+/* :nth-child() - itens alternados da lista de valores */
+.valores li:nth-child(odd) {
+  background-color: #efe6dc;
+}
+
+.valores li:nth-child(even) {
+  background-color: #e3d2c0;
+}
+
+
+.menu li:not(:last-child) a {
+  border-right: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+/* :checked - checkbox do formulário */
+.opcao input:checked + span {
+  color: #7a2a3f;
+  font-weight: bold;
+}
+
+/* ===== PSEUDO-ELEMENTOS ===== */
+
+/* ::before - ícone antes do nome da vinharia */
+.logo::before {
+  content: "";
+}
+
+/* ::after - linha decorativa embaixo dos títulos dos cards */
+.card h3::after {
+  content: "";
+  display: block;
+  width: 40px;
+  height: 3px;
+  margin: 8px auto 0;
+  background-color: #c9a45c;
+}
+
+/* ::first-letter - letra capitular no texto de destaque */
+.destaque::first-letter {
+  font-size: 2.4rem;
+  font-weight: bold;
+  color: #7a2a3f;
+}
+
+/* ::selection - cor ao selecionar texto */
+::selection {
+  background-color: #c9a45c;
+  color: #3b0f1a;
+}
+
+/* ===== ANIMAÇÕES (@keyframes) ===== */
+
+@keyframes entrada {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulsar {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+}
+
+.banner h2,
+.banner p {
+  animation: entrada 1s ease-out both;
+}
+
+.banner .botao {
+  animation: pulsar 2s ease-in-out infinite;
+}
+
+/* ===== TRANSIÇÕES ===== */
+
+.menu a {
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.botao {
+  transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card img {
+  transition: transform 0.4s ease;
+}
+
+.formulario input,
+.formulario textarea {
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* ===== TRANSFORMAÇÕES ===== */
+
+/* translateY - card sobe no hover */
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.25);
+}
+
+/* scale - imagem aumenta dentro do card */
+.card:hover img {
+  transform: scale(1.1);
+}
+
+/* rotate - botão gira levemente no hover */
+.botao:hover {
+  background-color: #dcb86e;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  transform: rotate(-2deg) scale(1.05);
+}
